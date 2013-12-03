@@ -1,14 +1,13 @@
-<div class="user-settings">
-  <div class="row">
+<div class="user-settings row">
+  <div class="col-sm-12">
     <h1>Settings</h1>
     <div class="jumbotron">
-      <h3>Timer Set</h3>
+      <label>Timer Set</label>
       <div class="btn-group">
-        <button type="button" class="btn btn-default btn-primary">8 Minutes</button>
-        <button type="button" class="btn btn-default">6 Minutes</button>
+        <button type="button" class="btn btn-default" ng-repeat="time in timelimits">{{ time }}</button>
       </div>
 
-      <h3>Sources</h3>
+      <label>Sources</label>
       <ul>
           <li class="sources" ng-repeat="source in sources">{{source}}</li>
       </ul>

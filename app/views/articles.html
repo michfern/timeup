@@ -1,11 +1,14 @@
 <div class="row articles">
   <div class="col-lg-12">
-    <timer interval="1000" countdown="100">
-      <div class="progress progress-striped active">
-        <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{seconds}}%;"></div>
-      </div>
-    </timer>
-    <div class="article" ng-repeat="article in articles">
+    <div class="progresser navbar-fixed-top">
+      <timer interval="2">
+        <div class="progress progress-striped active">
+          <div class="progress-bar" role="progressbar"  style="width: {{seconds}}%;"></div>
+        </div>
+      </timer>
+    </div>
+    <div class="article"
+        ng-repeat="article in articles" >
       <div class="title">
         <h1>{{ article.title }}</h1>
       </div>
