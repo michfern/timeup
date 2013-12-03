@@ -1,19 +1,24 @@
 angular.module("timeupApp", ['ngResource',
                               'ngRoute',
-                              'ngSanitize'])
-  .config ($routeProvider) ->
+                              'ngAnimate',
+                              'timer'])
+  .config ($routeProvider, $locationProvider) ->
+
+    # $locationProvider.html5Mode(true)
+    homePath = "/"
 
     $routeProvider
-      .when "/",
-        templateUrl: "views/main.html"
+      .when homePath,
+        templateUrl: "views/welcome.html"
         controller: "MainCtrl"
 
       .when "/articles",
         templateUrl: "views/articles.html"
-        # controller: "ArticlesCtrl"
+        controller: "ArticlesCtrl"
 
       .when "/settings",
         templateUrl: "views/settings.html"
+        controller: "SettingsCtrl"
 
 
       .otherwise redirectTo: "/"

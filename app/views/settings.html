@@ -1,3 +1,26 @@
-<div>
-  Here are my settings for this user
+<div class="user-settings">
+  <div class="row">
+    <h1>Settings</h1>
+    <div class="jumbotron">
+      <h3>Timer Set</h3>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default btn-primary">8 Minutes</button>
+        <button type="button" class="btn btn-default">6 Minutes</button>
+      </div>
+
+      <h3>Sources</h3>
+      <ul>
+          <li class="sources" ng-repeat="source in sources">{{source}}</li>
+      </ul>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input ng-model="settings.newSource" type="text" class="form-control" placeholder="Add another source">
+          <span class="input-group-btn">
+            <button ng-click="addSource(settings.newSource)" class="btn btn-default" type="button">Add!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
