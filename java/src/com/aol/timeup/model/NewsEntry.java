@@ -9,10 +9,26 @@ import javax.persistence.Id;
 public class NewsEntry implements Serializable{
 
 	@Id Long id;
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	String sourceEntryId;	
 	String title;
 	String body;
 	String summary;
-	
+
+	public String getSourceEntryId() {
+		return sourceEntryId;
+	}
+
+	public void setSourceEntryId(String sourceEntryId) {
+		this.sourceEntryId = sourceEntryId;
+	}
 
 	public NewsEntry(){
 		
