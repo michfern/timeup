@@ -5,8 +5,15 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import com.googlecode.objectify.ObjectifyService;
+
 @Entity
 public class NewsEntry implements Serializable{
+
+	static {
+		ObjectifyService.register(NewsEntry.class);
+
+	}
 
 	@Id Long id;
 	public Long getId() {

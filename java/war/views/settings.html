@@ -1,0 +1,25 @@
+<div class="user-settings row">
+  <div class="col-sm-12">
+    <h1>Settings</h1>
+    <div class="jumbotron">
+      <label>Timer Set</label>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" ng-repeat="time in timelimits">{{ time }}</button>
+      </div>
+
+      <label>Sources</label>
+      <ul>
+          <li class="sources" ng-repeat="source in sources">{{source}}</li>
+      </ul>
+      <div class="col-lg-6">
+        <div class="input-group">
+          <input ng-model="settings.newSource" type="text" class="form-control" placeholder="Add another source">
+          <span class="input-group-btn">
+            <button ng-click="addSource(settings.newSource)" class="btn btn-default" type="button">Add!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

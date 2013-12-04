@@ -34,11 +34,12 @@ public class FetchFromHuffPost {
 
     	//Step 2 Parse response JSON to get ids from it.
     	
-		Object responseJson = JSONValue.parse(data);
+		Map responseJson = (Map) JSONValue.parse(data);
         //Get the Results object
         JSONArray resultsJson = new JSONArray();
 
-        resultsJson = (JSONArray) responseJson.get("entries");
+        //responseJson = (Map) responseJson.get("response");
+        resultsJson = (JSONArray) responseJson.get("response");
       //now grab the specific data from each element in the array
         JSONObject jsonObj;
         for (int i = 0; i < resultsJson.size(); i++) {
@@ -50,7 +51,8 @@ public class FetchFromHuffPost {
 
             //Step 4 Parse and create the NewsEntry object
             Map entryData = (Map) JSONValue.parse(htmpEntryData);
-            entryData = (Map) responseJson.get("response");
+            entryData = (Map) entryData.get("response");
+            entryData = (Map) entryData.get(entryId);
             
             String entryTitle = (String)entryData.get("entry_title");
             String entryBody = (String)entryData.get("entry_text");
